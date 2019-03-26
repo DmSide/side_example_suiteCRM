@@ -45,7 +45,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
 include("metadata/accounts_bugsMetaData.php");
 include("metadata/accounts_casesMetaData.php");
 include("metadata/accounts_contactsMetaData.php");
-include("metadata/accounts_opportunitiesMetaData.php");
+include("metadata/accounts_opportunities1MetaData.php");
 include("metadata/calls_contactsMetaData.php");
 include("metadata/calls_usersMetaData.php");
 include("metadata/calls_leadsMetaData.php");

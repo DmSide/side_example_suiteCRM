@@ -46,6 +46,7 @@ $dictionary['accounts_opportunities'] = array( 'table' => 'accounts_opportunitie
        array('name' =>'id', 'type' =>'varchar', 'len'=>'36')
       , array('name' =>'opportunity_id', 'type' =>'varchar', 'len'=>'36', )
       , array('name' =>'account_id', 'type' =>'varchar', 'len'=>'36', )
+      , array('name' =>'account_billing_address_street', 'type' =>'varchar', 'len'=>'36', ) #SIDE_EDIT
       , array('name' => 'date_modified','type' => 'datetime')
       , array('name' =>'deleted', 'type' =>'bool', 'len'=>'1', 'default'=>'0', 'required'=>false)
       )
