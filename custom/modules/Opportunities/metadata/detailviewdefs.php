@@ -85,16 +85,30 @@ array (
           ),
           1 => 
           array (
-            'name' => 'deal_creator_c',
-            'label' => 'LBL_DEAL_CREATOR_C',
+            'name' => 'currency_id',
+            'comment' => 'Currency used for display purposes',
+            'label' => 'LBL_CURRENCY',
           ),
         ),
         4 => 
         array (
+          0 => 
+          array (
+            'name' => 'created_by_name',
+            'label' => 'LBL_CREATED',
+          ),
+          1 => 
+          array (
+            'name' => 'deal_creator_c',
+            'label' => 'LBL_DEAL_CREATOR_C',
+          ),
+        ),
+        5 => 
+        array (
           0 => 'sales_stage',
           1 => 'lead_source',
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -103,11 +117,11 @@ array (
             'label' => 'LBL_ENGINEER',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 'next_step',
         ),
-        7 => 
+        8 => 
         array (
           0 => 
           array (
@@ -115,7 +129,7 @@ array (
             'nl2br' => true,
           ),
         ),
-        8 => 
+        9 => 
         array (
           0 => 'probability',
           1 => 'campaign_name',

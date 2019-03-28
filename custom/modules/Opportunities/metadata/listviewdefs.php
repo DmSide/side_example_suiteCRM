@@ -95,6 +95,12 @@ array (
     'link' => true,
     'width' => '10%',
   ),
+  'CREATED_BY_NAME' => 
+  array (
+    'width' => '10%',
+    'label' => 'LBL_CREATED',
+    'default' => true,
+  ),
   'DEAL_CREATOR_C' => 
   array (
     'type' => 'varchar',
@@ -124,12 +130,6 @@ array (
   array (
     'width' => '10%',
     'label' => 'LBL_PROBABILITY',
-    'default' => false,
-  ),
-  'CREATED_BY_NAME' => 
-  array (
-    'width' => '10%',
-    'label' => 'LBL_CREATED',
     'default' => false,
   ),
   'MODIFIED_BY_NAME' => 
