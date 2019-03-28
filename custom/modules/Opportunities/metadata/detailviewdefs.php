@@ -58,29 +58,41 @@ array (
         array (
           0 => 
           array (
+            'name' => 'deal_address_c',
+            'label' => 'LBL_DEAL_ADDRESS_C',
+          ),
+          1 => 
+          array (
+            'name' => 'deal_manager_c',
+            'label' => 'LBL_DEAL_MANAGER_C',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
             'name' => 'date_entered',
             'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}',
           ),
           1 => 'date_closed',
         ),
-        2 => 
+        3 => 
         array (
           0 => 
           array (
             'name' => 'amount',
             'label' => '{$MOD.LBL_AMOUNT} ({$CURRENCY})',
           ),
-          1 => 'opportunity_type',
-        ),
-        3 => 
-        array (
-          0 => 'sales_stage',
-          1 => 'lead_source',
+          1 => 
+          array (
+            'name' => 'deal_creator_c',
+            'label' => 'LBL_DEAL_CREATOR_C',
+          ),
         ),
         4 => 
         array (
-          0 => 'probability',
-          1 => 'campaign_name',
+          0 => 'sales_stage',
+          1 => 'lead_source',
         ),
         5 => 
         array (
@@ -90,7 +102,6 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_ENGINEER',
           ),
-          1 => '',
         ),
         6 => 
         array (
@@ -103,6 +114,11 @@ array (
             'name' => 'description',
             'nl2br' => true,
           ),
+        ),
+        8 => 
+        array (
+          0 => 'probability',
+          1 => 'campaign_name',
         ),
       ),
       'LBL_PANEL_ASSIGNMENT' => 
