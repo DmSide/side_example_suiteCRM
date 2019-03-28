@@ -18,11 +18,11 @@
             //$bean->name = strtoupper($bean->name);
             //$id =  "f1b71b12-004b-02d6-3667-5c93d1aaabb1"; //$bean->id;
             //$my_id = $bean->id;
-          //  $db = DBManagerFactory::getInstance();
+            $db = DBManagerFactory::getInstance();
 //$query = "UPDATE tasks SET status = 'Completed' WHERE parent_id ='f1b71b12-004b-02d6-3667-5c93d1aaabb1'";
-       //     $query = "UPDATE tasks SET status = 'Completed' WHERE parent_id ='{$bean->id}'";
+            $query = "UPDATE tasks SET status = 'Completed' WHERE parent_id ='{$bean->id}'";
            // $query = "SELECT * FROM tasks";
-       //     $db->query($query);
+            $db->query($query);
 
 
 //        'Primary contact' => 'Первичный контакт',
