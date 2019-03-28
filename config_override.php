@@ -42,4 +42,9 @@ $sugar_config['addAjaxBannedModules'][31] = 'Prospects';
 $sugar_config['addAjaxBannedModules'][32] = 'Leads';
 $sugar_config['addAjaxBannedModules'][33] = 'Notes';
 $sugar_config['addAjaxBannedModules'][34] = 'Meetings';
+$sugar_config['logger']['level'] = 'debug';
+$sugar_config['default_module_favicon'] = false;
+$sugar_config['dashlet_auto_refresh_min'] = '30';
+$sugar_config['stack_trace_errors'] = false;
+$sugar_config['developerMode'] = true;
 /***CONFIGURATOR***/
