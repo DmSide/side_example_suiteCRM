@@ -37,7 +37,7 @@
 //        'Closed Lost' => 'Закрыто с потерей',
 //
             $now = date_create()->format('Y-m-d H:i:s');
-            $tomorrow = date("Y-m-d", time() + 86400)->format('Y-m-d H:i:s');
+            $tomorrow = date('Y-m-d H:i:s', time() + 86400);
             $uuid = sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
                     // 32 bits for "time_low"
                     mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
@@ -57,26 +57,27 @@
                     // 48 bits for "node"
                     mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
                 );
-            $task = new Task();
-            $task->id = $uuid;
-            $task->created_by = '1';
-            $task->name = 'Side test';
-            $task->status = 'Not Started';
-            $task->deleted = 0;
-            $task->date_entered = $now;
-            $task->date_due_flag = 0;
-            $task->date_due = $tomorrow;
-            $task->description = "Side test"; //{$bean->description}'
-            $task->parent_type = 'Opportunities';
-            $task->parent_id = $bean->id;
-            $task->save();
-//            if ($bean->sales_stage == "Technical department" or $bean->sales_stage == "Техотдел") {
-//                $uuid=_new_uuid();
-//                //$uuid = UUID::v4();
-//                $queryInsert = "INSERT INTO tasks (id, name, created_by, status, deleted, description, parent_type, parent_id)
-//                            VALUES ('{$uuid}', 'SIDE test', 1, 'Not Started', 0, '{$bean->description}','Opportunities', '{$bean->id}')";
-//                $this->db->query($queryInsert);
-//            }
+//            $task = new Task();
+//            $task->id = $uuid;
+//            $task->created_by = '1';
+//            $task->name = 'Side test';
+//            $task->status = 'Not Started';
+//            $task->deleted = 0;
+//            $task->date_entered = $now;
+//            $task->date_due_flag = 0;
+//            $task->date_due = $tomorrow;
+//            $task->description = "Side test"; //{$bean->description}'
+//            $task->parent_type = 'Opportunities';
+//            $task->parent_id = $bean->id;
+//            $task->save();
+//            $GLOBALS['log']->debug($now);
+//            $GLOBALS['log']->debug($tomorrow);
+//            $GLOBALS['log']->debug($uuid);
+            if ($bean->sales_stage == "Technical department" or $bean->sales_stage == "Техотдел") {
+                $queryInsert = "INSERT INTO tasks (id, name, created_by, status, deleted, date_entered, date_due_flag, date_due, description, parent_type, parent_id)
+                            VALUES ('{$uuid}', 'SIDE test', '1', 'Not Started', 0, '{$now}',0,'{$tomorrow}','{$bean->description}','Opportunities', '{$bean->id}')";
+                $db->query($queryInsert);
+            }
 
         }
     }
