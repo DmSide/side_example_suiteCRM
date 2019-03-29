@@ -549,15 +549,23 @@ $dictionary['Account'] = array(
             'rhs_key' => 'contract_account_id',
             'relationship_type' => 'one-to-many',
         ),
+//        'accounts_opportunities' => array(
+//            'lhs_module' => 'Accounts',
+//            'lhs_table' => 'accounts',
+//            'lhs_key' => 'id',
+//            'rhs_module' => 'Opportunities',
+//            'rhs_table' => 'opportunities',
+//            'rhs_key' => 'account_id',
+//            'relationship_type' => 'one-to-many',
+//        ),
         'accounts_opportunities' => array(
-            'lhs_module' => 'Accounts',
-            'lhs_table' => 'accounts',
+            'lhs_module'=> 'Accounts',
+            'lhs_table'=> 'accounts',
             'lhs_key' => 'id',
-            'rhs_module' => 'Opportunity',
-            'rhs_table' => 'opportunity',
-            'rhs_key' => 'account_id',
-            'relationship_type' => 'one-to-many',
-        ),
+            'rhs_module'=> 'Opportunities', 'rhs_table'=> 'opportunities', 'rhs_key' => 'id',
+            'relationship_type'=>'many-to-many',
+            'join_table'=> 'accounts_opportunities', 'join_key_lhs'=>'account_id', 'join_key_rhs'=>'opportunity_id')
+
     ),
     //This enables optimistic locking for Saves From EditView
     'optimistic_locking' => true,

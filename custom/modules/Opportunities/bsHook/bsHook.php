@@ -35,17 +35,41 @@
 //        'Sale' => 'Реализация',
 //        'Closed Won' => 'Закрыто с успехом',
 //        'Closed Lost' => 'Закрыто с потерей',
+//
+            $now = date_create()->format('Y-m-d H:i:s');
+            $tomorrow = date("Y-m-d", time() + 86400)->format('Y-m-d H:i:s');
+            $uuid = sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+                    // 32 bits for "time_low"
+                    mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
 
-//        $task = new Task();
-//        $task->id = UUID();
-//        $task->created_by = 1;
-//        $task->name = 'Side test';
-//        $task->status = 'Not Started';
-//        $task->deleted = 0;
-//        $task->description = "Side test"; //{$bean->description}'
-//        $task->parent_type = 'Opportunities';
-//        $task->parent_id = $bean->id;
-//        $task->save();
+                    // 16 bits for "time_mid"
+                    mt_rand( 0, 0xffff ),
+
+                    // 16 bits for "time_hi_and_version",
+                    // four most significant bits holds version number 4
+                    mt_rand( 0, 0x0fff ) | 0x4000,
+
+                    // 16 bits, 8 bits for "clk_seq_hi_res",
+                    // 8 bits for "clk_seq_low",
+                    // two most significant bits holds zero and one for variant DCE1.1
+                    mt_rand( 0, 0x3fff ) | 0x8000,
+
+                    // 48 bits for "node"
+                    mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
+                );
+            $task = new Task();
+            $task->id = $uuid;
+            $task->created_by = '1';
+            $task->name = 'Side test';
+            $task->status = 'Not Started';
+            $task->deleted = 0;
+            $task->date_entered = $now;
+            $task->date_due_flag = 0;
+            $task->date_due = $tomorrow;
+            $task->description = "Side test"; //{$bean->description}'
+            $task->parent_type = 'Opportunities';
+            $task->parent_id = $bean->id;
+            $task->save();
 //            if ($bean->sales_stage == "Technical department" or $bean->sales_stage == "Техотдел") {
 //                $uuid=_new_uuid();
 //                //$uuid = UUID::v4();
