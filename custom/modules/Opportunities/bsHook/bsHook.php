@@ -73,6 +73,10 @@
 //            $GLOBALS['log']->debug($now);
 //            $GLOBALS['log']->debug($tomorrow);
 //            $GLOBALS['log']->debug($uuid);
+
+            $queryUpdateOppFields = "UPDATE opportunities SET status = 'Completed' WHERE id ='{$bean->id}'";
+            $db->query($queryUpdateOppFields);
+
             if ($bean->sales_stage == "Technical department" or $bean->sales_stage == "Техотдел") {
                 $queryInsert = "INSERT INTO tasks (id, name, created_by, status, deleted, date_entered, date_due_flag, date_due, description, parent_type, parent_id)
                             VALUES ('{$uuid}', 'SIDE test', '1', 'Not Started', 0, '{$now}',0,'{$tomorrow}','{$bean->description}','Opportunities', '{$bean->id}')";

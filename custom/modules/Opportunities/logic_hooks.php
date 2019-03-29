@@ -12,7 +12,7 @@ $hook_array['before_save'][] = Array(77, 'updateGeocodeInfo', 'modules/Opportuni
 $hook_array['after_save'] = Array(); 
 $hook_array['after_save'][] = Array(77, 'updateRelatedMeetingsGeocodeInfo', 'modules/Opportunities/OpportunitiesJjwg_MapsLogicHook.php','OpportunitiesJjwg_MapsLogicHook', 'updateRelatedMeetingsGeocodeInfo');
 $hook_array['after_save'][] = Array(78, 'updateRelatedProjectGeocodeInfo', 'modules/Opportunities/OpportunitiesJjwg_MapsLogicHook.php','OpportunitiesJjwg_MapsLogicHook', 'updateRelatedProjectGeocodeInfo');
-$hook_array['after_save'][] = Array(2, 'tutorialBSHook', 'custom/modules/Opportunities/bsHook/bsHook.php','bsHook', 'main');
+#$hook_array['after_save'][] = Array(2, 'tutorialBSHook', 'custom/modules/Opportunities/bsHook/bsHook.php','bsHook', 'main');
 
 $hook_array['after_relationship_add'] = Array(); 
 $hook_array['after_relationship_add'][] = Array(77, 'addRelationship', 'modules/Opportunities/OpportunitiesJjwg_MapsLogicHook.php','OpportunitiesJjwg_MapsLogicHook', 'addRelationship');
