@@ -101,13 +101,6 @@ array (
     'label' => 'LBL_CREATED',
     'default' => true,
   ),
-  'DEAL_CREATOR_C' => 
-  array (
-    'type' => 'varchar',
-    'default' => true,
-    'label' => 'LBL_DEAL_CREATOR_C',
-    'width' => '10%',
-  ),
   'OPPORTUNITY_TYPE' => 
   array (
     'width' => '15%',

@@ -11,7 +11,7 @@ $dictionary['Opportunity']['fields']['deal_manager_c']['enforced'] = '';
 $dictionary['Opportunity']['fields']['deal_manager_c']['dependency'] = '';
 $dictionary['Opportunity']['fields']['deal_manager_c']['required'] = false;
 $dictionary['Opportunity']['fields']['deal_manager_c']['massupdate'] = '0';
-$dictionary['Opportunity']['fields']['deal_manager_c']['default'] = '';
+$dictionary['Opportunity']['fields']['deal_manager_c']['default'] = 'Заполнится автоматически';
 $dictionary['Opportunity']['fields']['deal_manager_c']['no_default'] = false;
 $dictionary['Opportunity']['fields']['deal_manager_c']['comments'] = 'deal_manager';
 $dictionary['Opportunity']['fields']['deal_manager_c']['help'] = '';
@@ -28,5 +28,5 @@ $dictionary['Opportunity']['fields']['deal_manager_c']['size'] = '20';
 $dictionary['Opportunity']['fields']['deal_manager_c']['id'] = 'deal_manager_c';
 $dictionary['Opportunity']['fields']['deal_manager_c']['custom_module'] = ''; #'Opportunities';
 //required to create the field in the _cstm table
-#$dictionary['Opportunity']['fields']['deal_manager_c']['source'] = 'custom_fields';
+$dictionary['Opportunity']['fields']['deal_manager_c']['source'] = 'custom_fields';
  ?>
