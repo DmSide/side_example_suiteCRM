@@ -66,6 +66,12 @@ $dictionary["Opportunity"]["fields"]["opportunities_documents_1"] = array (
 );
 
 
+ // created: 2019-03-31 02:19:00
+$dictionary['Opportunity']['fields']['good_cost_c']['inline_edit']='1';
+$dictionary['Opportunity']['fields']['good_cost_c']['labelValue']='Стоимость товара';
+
+ 
+
  // created: 2019-03-27 13:59:12
 #$dictionary['Opportunity']['fields']['deal_address_c']['inline_edit']='1';
 #$dictionary['Opportunity']['fields']['deal_address_c']['labelValue']='Адрес выезда';
@@ -97,6 +103,11 @@ $dictionary['Opportunity']['fields']['deal_address_c']['custom_module'] = '';
 //required to create the field in the _cstm table
 $dictionary['Opportunity']['fields']['deal_address_c']['source'] = 'custom_fields';
 
+
+ // created: 2019-03-31 02:30:01
+$dictionary['Opportunity']['fields']['good_date_comming_c']['inline_edit']='1';
+$dictionary['Opportunity']['fields']['good_date_comming_c']['labelValue']='Дата поступления';
+ 
 
  // created: 2019-03-30 04:11:03
 $dictionary['Opportunity']['fields']['date_closed']['display_default']='+1 day';
@@ -152,6 +163,11 @@ $dictionary['Opportunity']['fields']['jjwg_maps_address_c']['inline_edit']=1;
 
  
 
+ // created: 2019-03-31 02:34:30
+$dictionary['Opportunity']['fields']['document_id_c']['inline_edit']=1;
+
+ 
+
  // created: 2019-03-27 13:56:39
 #$dictionary['Opportunity']['fields']['deal_manager_c']['inline_edit']='1';
 //$dictionary['Opportunity']['fields']['deal_manager_c']['labelValue']='Ответственный менеджер';
@@ -182,6 +198,18 @@ $dictionary['Opportunity']['fields']['deal_manager_c']['id'] = 'deal_manager_c';
 $dictionary['Opportunity']['fields']['deal_manager_c']['custom_module'] = ''; #'Opportunities';
 //required to create the field in the _cstm table
 $dictionary['Opportunity']['fields']['deal_manager_c']['source'] = 'custom_fields';
+ 
+
+ // created: 2019-03-31 02:34:30
+$dictionary['Opportunity']['fields']['loaded_act_c']['inline_edit']='1';
+$dictionary['Opportunity']['fields']['loaded_act_c']['labelValue']='Акт мастера';
+
+ 
+
+ // created: 2019-03-31 02:20:11
+$dictionary['Opportunity']['fields']['good_date_c']['inline_edit']='1';
+$dictionary['Opportunity']['fields']['good_date_c']['labelValue']='Сроки поставки';
+
  
 
  // created: 2019-03-12 21:43:13

@@ -101,8 +101,36 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_ENGINEER',
           ),
+          1 => 
+          array (
+            'name' => 'loaded_act_c',
+            'studio' => 'visible',
+            'label' => 'LBL_LOADED_ACT_C',
+          ),
         ),
         6 => 
+        array (
+          0 => 
+          array (
+            'name' => 'good_cost_c',
+            'label' => 'LBL_GOOD_COST_C',
+          ),
+          1 => 
+          array (
+            'name' => 'good_date_c',
+            'label' => 'LBL_GOOD_DATE_C',
+          ),
+        ),
+        7 => 
+        array (
+          0 => 
+          array (
+            'name' => 'good_date_comming_c',
+            'label' => 'LBL_GOOD_DATE_COMMING_C',
+          ),
+          1 => '',
+        ),
+        8 => 
         array (
           0 => 
           array (
