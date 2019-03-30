@@ -19,6 +19,7 @@ class create_new_task_hook
 //        'Matching' => 'Согласование',
 //        'Price Quote' => 'Счет',
 //        'Order' => 'Заказ',
+//        'Waiting' => 'Ожидание товара',
 //        'Sale' => 'Реализация',
 //        'Closed Won' => 'Закрыто с успехом',
 //        'Closed Lost' => 'Закрыто с потерей',
@@ -26,7 +27,23 @@ class create_new_task_hook
         $GLOBALS['log']->debug('Start create_new_task_hook');
         if ($bean->sales_stage == "Closed Won" or $bean->sales_stage == "Закрыто с успехом") return;
         if ($bean->sales_stage == "Primary contact" or $bean->sales_stage == "Первичный контакт") return;
+        //**************GET USERS********************
+        $techotdel_id = '';
+        $denis_id = '';
+        $office_id ='';
 
+        $dbGetUsers = DBManagerFactory::getInstance();
+        $queryGetUsers = "SELECT * FROM users WHERE deleted = 0";
+        $resultGetUsers = $dbGetUsers->query($queryGetUsers);
+        while($resultGetUsersRow = $dbGetUsers->fetchByAssoc($resultGetUsers)){
+            $name = $resultGetUsersRow['user_name'];
+            if ($name == "tehotdel") $techotdel_id = $resultGetUsersRow['id'];
+            if ($name == "d.tsoy") $denis_id = $resultGetUsersRow['id'];
+            if ($name == "office") $office_id = $resultGetUsersRow['id'];
+        }
+
+        if ($techotdel_id == '' or $denis_id == '' or $office_id == '') return;
+        //**********************************************************
         $now = date_create()->format('Y-m-d H:i:s');
         $uuid = sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
             // 32 bits for "time_low"
@@ -78,13 +95,13 @@ class create_new_task_hook
         $deal_manager_c = $resultGetManagerRow['deal_manager_c'];
         //*****************Get $date_due*****************************
         $date_due = ($bean->sales_stage == "Price Quote" or $bean->sales_stage == "Счет")
-            ? date('Y-m-d H:i:s', time() + 86400*3)
-            : date('Y-m-d H:i:s', time() + 86400); //$tomorrow;
+            ? date('Y-m-d H:i:s', strtotime("+3 day"))
+            : date('Y-m-d H:i:s', strtotime("+1 day")); //$tomorrow;
         //***************Create list of users***********************
         $assigned_user_list = array(
-            'techotdel' => 'c6c52b5c-cbed-5bbb-8d58-5c5bfb65720f',
-            'office' => '72ddba62-cc55-edb2-3260-5c9fcf714535',
-            'denis' => '570cfb3e-fe1f-ed10-68f4-5c5bfaa04842',
+            'techotdel' => $techotdel_id, //'c6c52b5c-cbed-5bbb-8d58-5c5bfb65720f',
+            'office' => $office_id,//'72ddba62-cc55-edb2-3260-5c9fcf714535',
+            'denis' => $denis_id, //'570cfb3e-fe1f-ed10-68f4-5c5bfaa04842',
             'manager' => $deal_manager_c,
         );
         //*********Fill up field $assigned_user_id and $name*************************************************
@@ -119,10 +136,6 @@ class create_new_task_hook
             $assigned_user_id = $assigned_user_list['office'];
             $name = 'Счет на диагностику';
         }
-
-        $GLOBALS['log']->debug('*************PARAGUE***************');
-        $GLOBALS['log']->debug($assigned_user_list['techotdel']);
-        $GLOBALS['log']->debug($bean->sales_stage);
 
         $dbInsertNewTask = DBManagerFactory::getInstance();
         $queryInsertNewTask = "INSERT INTO tasks (
