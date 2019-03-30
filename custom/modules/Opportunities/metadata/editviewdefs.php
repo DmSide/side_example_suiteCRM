@@ -78,8 +78,8 @@ array (
         array (
           0 => 
           array (
-            'name' => 'created_by_name',
-            'label' => 'LBL_CREATED',
+            'name' => 'created_by_name_c',
+            'label' => 'LBL_CREATED_BY_NAME_C',
           ),
           1 => 
           array (

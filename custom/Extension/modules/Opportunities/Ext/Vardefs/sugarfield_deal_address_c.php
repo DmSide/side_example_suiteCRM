@@ -25,7 +25,7 @@ $dictionary['Opportunity']['fields']['deal_address_c']['merge_filter'] = 'disabl
 $dictionary['Opportunity']['fields']['deal_address_c']['calculated'] = false;
 $dictionary['Opportunity']['fields']['deal_address_c']['len'] = '255';
 $dictionary['Opportunity']['fields']['deal_address_c']['size'] = '20';
-$dictionary['Opportunity']['fields']['deal_address_c']['id'] = 'deal_manager_c';
+$dictionary['Opportunity']['fields']['deal_address_c']['id'] = 'deal_address_c';
 $dictionary['Opportunity']['fields']['deal_address_c']['custom_module'] = '';
 //required to create the field in the _cstm table
 $dictionary['Opportunity']['fields']['deal_address_c']['source'] = 'custom_fields';
