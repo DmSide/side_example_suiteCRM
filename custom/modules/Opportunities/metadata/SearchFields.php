@@ -1,5 +1,5 @@
 <?php
-// created: 2019-03-30 04:12:35
+// created: 2019-03-30 04:21:39
 $searchFields['Opportunities'] = array (
   'name' => 
   array (
@@ -145,6 +145,18 @@ $searchFields['Opportunities'] = array (
     'enable_range_search' => true,
     'is_date_field' => true,
   ),
+  'date_entered' => 
+  array (
+    'query_type' => 'default',
+  ),
+  'amount_usdollar' => 
+  array (
+    'query_type' => 'default',
+  ),
+  'date_closed' => 
+  array (
+    'query_type' => 'default',
+  ),
   'range_amount' => 
   array (
     'query_type' => 'default',
@@ -159,17 +171,5 @@ $searchFields['Opportunities'] = array (
   array (
     'query_type' => 'default',
     'enable_range_search' => true,
-  ),
-  'date_entered' => 
-  array (
-    'query_type' => 'default',
-  ),
-  'amount_usdollar' => 
-  array (
-    'query_type' => 'default',
-  ),
-  'date_closed' => 
-  array (
-    'query_type' => 'default',
   ),
 );

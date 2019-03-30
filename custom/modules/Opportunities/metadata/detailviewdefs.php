@@ -92,7 +92,6 @@ array (
         4 => 
         array (
           0 => 'sales_stage',
-          1 => 'lead_source',
         ),
         5 => 
         array (
@@ -105,20 +104,11 @@ array (
         ),
         6 => 
         array (
-          0 => 'next_step',
-        ),
-        7 => 
-        array (
           0 => 
           array (
             'name' => 'description',
             'nl2br' => true,
           ),
-        ),
-        8 => 
-        array (
-          0 => 'probability',
-          1 => 'campaign_name',
         ),
       ),
       'LBL_PANEL_ASSIGNMENT' => 
