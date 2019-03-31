@@ -58,11 +58,6 @@ array (
         array (
           0 => 
           array (
-            'name' => 'deal_address_c',
-            'label' => 'LBL_DEAL_ADDRESS_C',
-          ),
-          1 => 
-          array (
             'name' => 'deal_manager_c',
             'label' => 'LBL_DEAL_MANAGER_C',
           ),
@@ -79,11 +74,6 @@ array (
         3 => 
         array (
           0 => 
-          array (
-            'name' => 'created_by_name_c',
-            'label' => 'LBL_CREATED_BY_NAME_C',
-          ),
-          1 => 
           array (
             'name' => 'amount',
             'label' => '{$MOD.LBL_AMOUNT} ({$CURRENCY})',

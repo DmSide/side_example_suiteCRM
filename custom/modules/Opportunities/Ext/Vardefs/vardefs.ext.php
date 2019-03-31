@@ -42,38 +42,6 @@ $dictionary['Opportunity']['fields']['good_cost_c']['labelValue']='Стоимо�
 
  
 
- // created: 2019-03-27 13:59:12
-#$dictionary['Opportunity']['fields']['deal_address_c']['inline_edit']='1';
-#$dictionary['Opportunity']['fields']['deal_address_c']['labelValue']='Адрес выезда';
-$dictionary['Opportunity']['fields']['deal_address_c']['inline_edit']='1';
-$dictionary['Opportunity']['fields']['deal_address_c']['labelValue']='выезда менеджер';
-$dictionary['Opportunity']['fields']['deal_address_c']['name'] = 'deal_address_c';
-$dictionary['Opportunity']['fields']['deal_address_c']['vname'] = 'LBL_DEAL_ADDRESS_C';
-$dictionary['Opportunity']['fields']['deal_address_c']['type'] = 'varchar';
-$dictionary['Opportunity']['fields']['deal_address_c']['enforced'] = '';
-$dictionary['Opportunity']['fields']['deal_address_c']['dependency'] = '';
-$dictionary['Opportunity']['fields']['deal_address_c']['required'] = false;
-$dictionary['Opportunity']['fields']['deal_address_c']['massupdate'] = '0';
-$dictionary['Opportunity']['fields']['deal_address_c']['default'] = 'Заполнится автоматически';
-$dictionary['Opportunity']['fields']['deal_address_c']['no_default'] = false;
-$dictionary['Opportunity']['fields']['deal_address_c']['comments'] = 'deal_address';
-$dictionary['Opportunity']['fields']['deal_address_c']['help'] = '';
-$dictionary['Opportunity']['fields']['deal_address_c']['importable'] = 'true';
-$dictionary['Opportunity']['fields']['deal_address_c']['duplicate_merge'] = 'disabled';
-$dictionary['Opportunity']['fields']['deal_address_c']['duplicate_merge_dom_value'] = '0';
-$dictionary['Opportunity']['fields']['deal_address_c']['audited'] = false;
-$dictionary['Opportunity']['fields']['deal_address_c']['reportable'] = true;
-$dictionary['Opportunity']['fields']['deal_address_c']['unified_search'] = false;
-$dictionary['Opportunity']['fields']['deal_address_c']['merge_filter'] = 'disabled';
-$dictionary['Opportunity']['fields']['deal_address_c']['calculated'] = false;
-$dictionary['Opportunity']['fields']['deal_address_c']['len'] = '255';
-$dictionary['Opportunity']['fields']['deal_address_c']['size'] = '20';
-$dictionary['Opportunity']['fields']['deal_address_c']['id'] = 'deal_address_c';
-$dictionary['Opportunity']['fields']['deal_address_c']['custom_module'] = '';
-//required to create the field in the _cstm table
-$dictionary['Opportunity']['fields']['deal_address_c']['source'] = 'custom_fields';
-
-
  // created: 2019-03-31 02:30:01
 $dictionary['Opportunity']['fields']['good_date_comming_c']['inline_edit']='1';
 $dictionary['Opportunity']['fields']['good_date_comming_c']['labelValue']='Дата поступления';
@@ -195,7 +163,7 @@ $dictionary['Opportunity']['fields']['engineer_c'] =
         'size' => '20',
     );
 
-$dictionary['Opportunity']['fields']['engineer_c'] =
+$dictionary['Opportunity']['fields']['deal_address_c'] =
     array (
         'required' => false,
         'name' => 'deal_address_c',
@@ -218,6 +186,27 @@ $dictionary['Opportunity']['fields']['engineer_c'] =
     );
 
 
+$dictionary['Opportunity']['fields']['created_by_name_c'] =
+    array (
+        'required' => false,
+        'name' => 'created_by_name_c',
+        'vname' => 'LBL_CREATED_BY_NAME_C',
+        'type' => 'varchar',
+        'massupdate' => 0,
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => '0',
+        'audited' => false,
+        'inline_edit' => true,
+        'reportable' => true,
+        'unified_search' => false,
+        'merge_filter' => 'disabled',
+        'len' => '255',
+        'size' => '20',
+    );
 //(
 //[type] => varchar
 //[supports_unified_search] => 1
