@@ -71,20 +71,6 @@ array (
     'label' => 'LBL_DATE_ENTERED',
     'default' => true,
   ),
-  'DEAL_ADDRESS_C' => 
-  array (
-    'type' => 'varchar',
-    'default' => true,
-    'label' => 'LBL_DEAL_ADDRESS_C',
-    'width' => '10%',
-  ),
-  'DEAL_MANAGER_C' => 
-  array (
-    'type' => 'varchar',
-    'default' => true,
-    'label' => 'LBL_DEAL_MANAGER_C',
-    'width' => '10%',
-  ),
   'ENGINEER_C' => 
   array (
     'type' => 'relate',

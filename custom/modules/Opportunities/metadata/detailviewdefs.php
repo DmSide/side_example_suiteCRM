@@ -58,20 +58,12 @@ array (
         array (
           0 => 
           array (
-            'name' => 'deal_manager_c',
-            'label' => 'LBL_DEAL_MANAGER_C',
-          ),
-        ),
-        2 => 
-        array (
-          0 => 
-          array (
             'name' => 'date_entered',
             'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}',
           ),
           1 => 'date_closed',
         ),
-        3 => 
+        2 => 
         array (
           0 => 
           array (
@@ -79,11 +71,11 @@ array (
             'label' => '{$MOD.LBL_AMOUNT} ({$CURRENCY})',
           ),
         ),
-        4 => 
+        3 => 
         array (
           0 => 'sales_stage',
         ),
-        5 => 
+        4 => 
         array (
           0 => 
           array (
@@ -97,7 +89,7 @@ array (
             'label' => 'LBL_ENGINEER_C',
           ),
         ),
-        6 => 
+        5 => 
         array (
           0 => 
           array (
@@ -110,7 +102,7 @@ array (
             'label' => 'LBL_GOOD_DATE_C',
           ),
         ),
-        7 => 
+        6 => 
         array (
           0 => 
           array (
@@ -119,7 +111,7 @@ array (
           ),
           1 => '',
         ),
-        8 => 
+        7 => 
         array (
           0 => 
           array (
