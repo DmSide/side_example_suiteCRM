@@ -58,45 +58,67 @@ array (
         array (
           0 => 
           array (
-            'name' => 'date_entered',
-            'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}',
+            'name' => 'deal_address_c',
+            'label' => 'LBL_DEAL_ADDRESS_C',
           ),
-          1 => 'date_closed',
-        ),
-        2 => 
-        array (
-          0 => 
+          1 => 
           array (
             'name' => 'amount',
             'label' => '{$MOD.LBL_AMOUNT} ({$CURRENCY})',
           ),
         ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'date_entered',
+            'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}',
+          ),
+          1 => 'date_closed',
+        ),
         3 => 
         array (
           0 => 'sales_stage',
+          1 => 
+          array (
+            'name' => 'deal_manager_c',
+            'label' => 'LBL_DEAL_MANAGER_C',
+          ),
         ),
         4 => 
         array (
           0 => 
           array (
+            'name' => 'engineer_c',
+            'label' => 'LBL_ENGINEER_C',
+          ),
+          1 => 
+          array (
             'name' => 'loaded_act_c',
             'studio' => 'visible',
             'label' => 'LBL_LOADED_ACT_C',
           ),
-          1 => 
-          array (
-            'name' => 'engineer_c',
-            'label' => 'LBL_ENGINEER_C',
-          ),
         ),
         5 => 
         array (
-          0 => '',
-          1 => '',
+          0 => 
+          array (
+            'name' => 'good_cost_c',
+            'label' => 'LBL_GOOD_COST_C',
+          ),
+          1 => 
+          array (
+            'name' => 'good_date_c',
+            'label' => 'LBL_GOOD_DATE_C',
+          ),
         ),
         6 => 
         array (
-          0 => '',
+          0 => 
+          array (
+            'name' => 'good_date_comming_c',
+            'label' => 'LBL_GOOD_DATE_COMMING_C',
+          ),
           1 => '',
         ),
         7 => 

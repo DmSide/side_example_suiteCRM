@@ -61,22 +61,6 @@ class create_new_task_hook
             mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
         );
 
-        //            $task = new Task();
-        //            $task->id = $uuid;
-        //            $task->created_by = '1';
-        //            $task->name = 'Side test';
-        //            $task->status = 'Not Started';
-        //            $task->deleted = 0;
-        //            $task->date_entered = $now;
-        //            $task->date_due_flag = 0;
-        //            $task->date_due = $tomorrow;
-        //            $task->description = "Side test"; //{$bean->description}'
-        //            $task->parent_type = 'Opportunities';
-        //            $task->parent_id = $bean->id;
-        //            $task->save();
-        //            $GLOBALS['log']->debug($now);
-        //            $GLOBALS['log']->debug($tomorrow);
-        //            $GLOBALS['log']->debug($uuid);
         //***************Get contact_id****************************
         $dbGetContactId = DBManagerFactory::getInstance();
         $queryGetContactId = "SELECT ac.contact_id as contact_id
@@ -89,7 +73,7 @@ class create_new_task_hook
         $contact_id  = $resultGetContactIdRow['contact_id'];
         //***************Get $deal_manager_c************************
         $dbGetManager = DBManagerFactory::getInstance();
-        $queryGetManager = "SELECT deal_manager_c, deal_address_c FROM opportunities_cstm WHERE id_c = '{$bean->id}'";
+        $queryGetManager = "SELECT deal_manager_c, deal_address_c FROM opportunities WHERE id = '{$bean->id}'";
         $resultGetManager = $dbGetManager->query($queryGetManager);
         $resultGetManagerRow = $dbGetManager->fetchByAssoc($resultGetManager);
         $deal_manager_c = $resultGetManagerRow['deal_manager_c'];

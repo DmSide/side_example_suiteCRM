@@ -47,7 +47,7 @@ class update_account_fileds_hook
             $dbSelectManager = DBManagerFactory::getInstance();
             $querySelectManager = "SELECT u.user_name as user_name
                   FROM accounts a, users u
-                  WHERE a.deleted = 0 and u.deleted = 0 and a.assigned_user_id is not null and a.assigned_user_id != \"\" 
+                  WHERE a.deleted = 0 and u.deleted = 0 
                         and u.id = a.assigned_user_id  and a.id = '{$result_account_id}'";
             $GLOBALS['log']->debug('Debugging message 6/1');
             $resultManager = $dbSelectManager->query($querySelectManager);
@@ -74,11 +74,11 @@ class update_account_fileds_hook
         }
 
         $dbUpdateOpportunities = DBManagerFactory::getInstance();
-        $queryUpdateOpportunities = "UPDATE opportunities_cstm 
+        $queryUpdateOpportunities = "UPDATE opportunities 
                                     SET created_by_name_c = '{$result_created_by_name}', 
                                         deal_manager_c = '{$result_manager_name}',
                                         deal_address_c = '{$result_street}'
-                                    WHERE id_c ='{$bean->id}'";
+                                    WHERE id ='{$bean->id}'";
         $dbUpdateOpportunities->query($queryUpdateOpportunities);
 
         $GLOBALS['log']->debug('Stop update_account_fileds_hook');
