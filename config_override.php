@@ -47,4 +47,7 @@ $sugar_config['default_module_favicon'] = false;
 $sugar_config['dashlet_auto_refresh_min'] = '30';
 $sugar_config['stack_trace_errors'] = false;
 $sugar_config['developerMode'] = true;
+$sugar_config['hide_history_contacts_emails']['Cases'] = false;
+$sugar_config['hide_history_contacts_emails']['Accounts'] = false;
+$sugar_config['hide_history_contacts_emails']['Opportunities'] = false;
 /***CONFIGURATOR***/

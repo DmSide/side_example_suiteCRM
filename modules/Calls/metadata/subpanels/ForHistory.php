@@ -99,9 +99,13 @@ $subpanel_layout = array(
             'usage'=>'query_only',
             'force_exists'=>true
         ),
-        'date_modified'=>array(
-            'vname' => 'LBL_LIST_DATE_MODIFIED',
-            'width' => '10%',
+        //        'date_modified'=>array(
+//             'vname' => 'LBL_LIST_DATE_MODIFIED',
+//             'width' => '10%',
+//        ),
+        'description'=>array(
+            'vname' => 'LBL_DESCRIPTION',
+            'width' => '30%',
         ),
         'date_entered'=>array(
             'vname' => 'LBL_LIST_DATE_ENTERED',
