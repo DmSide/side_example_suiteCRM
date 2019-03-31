@@ -98,6 +98,11 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_LOADED_ACT_C',
           ),
+          1 => 
+          array (
+            'name' => 'engineer_c',
+            'label' => 'LBL_ENGINEER_C',
+          ),
         ),
         6 => 
         array (
