@@ -94,12 +94,6 @@ array (
         array (
           0 => 
           array (
-            'name' => 'engineer_c',
-            'studio' => 'visible',
-            'label' => 'LBL_ENGINEER',
-          ),
-          1 => 
-          array (
             'name' => 'loaded_act_c',
             'studio' => 'visible',
             'label' => 'LBL_LOADED_ACT_C',
