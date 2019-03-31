@@ -32,3 +32,72 @@
 //$dictionary['Opportunity']['fields']['engineer_c']['custom_module'] = ''; #'Opportunities';
 ////required to create the field in the _cstm table
 //$dictionary['Opportunity']['fields']['engineer_c']['source'] = 'custom_fields';
+
+//(
+//[type] => varchar
+//[supports_unified_search] => 1
+//    [view] => edit
+//[name] => abcdefg
+//[vname] => LBL_ABCDEFG
+//[label] => LBL_ABCDEFG
+//[id] =>
+//    [size] => 20
+//    [len] => 255
+//    [required] =>
+//    [default] =>
+//    [default_value] =>
+//    [comment] =>
+//    [bean] =>
+//    [ext1] =>
+//    [ext2] =>
+//    [ext3] =>
+//    [ext4] => 
+//    [audited] => 0
+//    [inline_edit] => 1
+//    [massupdate] => 0
+//    [importable] => true
+//[duplicate_merge] => 0
+//    [new_field_definition] =>
+//    [reportable] => 1
+//    [label_value] => ABCDEFG
+//[help] =>
+//    [formula] =>
+//    [unified_search] => 0
+//    [vardef_map] => Array
+//(
+//    [name] => name
+//    [label] => vname
+//[default_value] => default
+//            [default] => default_value
+//[display_default] => default_value
+//[len] => len
+//[required] => required
+//[type] => type
+//[audited] => audited
+//[inline_edit] => inline_edit
+//[massupdate] => massupdate
+//[options] => ext1
+//[help] => help
+//[comments] => comment
+//[importable] => importable
+//[duplicate_merge] => duplicate_merge
+//[duplicate_merge_dom_value] => duplicate_merge_dom_value
+//[merge_filter] => merge_filter
+//[reportable] => reportable
+//[ext2] => ext2
+//[ext4] => ext4
+//[ext3] => ext3
+//[labelValue] => label_value
+//[unified_search] => unified_search
+//[full_text_search] => full_text_search
+//        )
+//
+//    [decode_from_request_fields_map] => Array
+//(
+//    [0] => formula
+//    [1] => dependency
+//        )
+//
+//    [comments] =>
+//    [labelValue] => ABCDEFG
+//)
