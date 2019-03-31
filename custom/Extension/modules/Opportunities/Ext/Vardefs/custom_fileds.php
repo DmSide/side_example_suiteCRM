@@ -168,3 +168,55 @@ $dictionary['Opportunity']['fields']['good_date_comming_c'] =
         'size' => '20',
         'enable_range_search' => false,
     );
+
+$dictionary['Opportunity']['fields']['loaded_act_c'] =
+    array (
+        'required' => false,
+        'source' => 'non-db',
+        'name' => 'loaded_act_c',
+        'vname' => 'LBL_LOADED_ACT_C',
+        'type' => 'relate',
+        'massupdate' => 0,
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => '0',
+        'audited' => false,
+        'inline_edit' => true,
+        'reportable' => true,
+        'unified_search' => false,
+        'merge_filter' => 'disabled',
+        'len' => '255',
+        'size' => '20',
+        'id_name' => 'document_id_c',
+        'ext2' => 'Documents',
+        'module' => 'Documents',
+        'rname' => 'document_name',
+        'quicksearch' => 'enabled',
+        'studio' => 'visible',
+    );
+
+
+$dictionary['Opportunity']['fields']['document_id_c'] =
+    array (
+        'required' => false,
+        'name' => 'document_id_c',
+        'vname' => 'LBL_LOADED_ACT_C_DOCUMENT_ID',
+        'type' => 'id',
+        'massupdate' => 0,
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => 0,
+        'audited' => false,
+        'inline_edit' => true,
+        'reportable' => false,
+        'unified_search' => false,
+        'merge_filter' => 'disabled',
+        'len' => 36,
+        'size' => '20',
+    );

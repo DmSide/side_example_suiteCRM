@@ -111,21 +111,6 @@ array (
     'label' => 'LBL_PROBABILITY',
     'default' => false,
   ),
-  'GOOD_DATE_C' => 
-  array (
-    'type' => 'date',
-    'default' => false,
-    'label' => 'LBL_GOOD_DATE_C',
-    'width' => '10%',
-  ),
-  'GOOD_COST_C' => 
-  array (
-    'type' => 'currency',
-    'default' => false,
-    'label' => 'LBL_GOOD_COST_C',
-    'currency_format' => true,
-    'width' => '10%',
-  ),
   'MODIFIED_BY_NAME' => 
   array (
     'width' => '5%',

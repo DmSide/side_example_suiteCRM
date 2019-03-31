@@ -91,24 +91,12 @@ array (
         ),
         5 => 
         array (
-          0 => 
-          array (
-            'name' => 'good_cost_c',
-            'label' => 'LBL_GOOD_COST_C',
-          ),
-          1 => 
-          array (
-            'name' => 'good_date_c',
-            'label' => 'LBL_GOOD_DATE_C',
-          ),
+          0 => '',
+          1 => '',
         ),
         6 => 
         array (
-          0 => 
-          array (
-            'name' => 'good_date_comming_c',
-            'label' => 'LBL_GOOD_DATE_COMMING_C',
-          ),
+          0 => '',
           1 => '',
         ),
         7 => 

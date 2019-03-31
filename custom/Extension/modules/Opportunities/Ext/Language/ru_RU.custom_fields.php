@@ -18,6 +18,7 @@ $mod_strings = array_merge($mod_strings,
        'LBL_GOOD_COST_C' => 'Стоимость товара',
        'LBL_GOOD_DATE_C' => 'Сроки поставки',
        'LBL_GOOD_DATE_COMMING_C' => 'Дата поступления',
+       'LBL_LOADED_ACT_C' => 'Акт мастера',
    )
 );
 ?>
