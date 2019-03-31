@@ -56,29 +56,50 @@ $dictionary['Opportunity']['fields']['engineer_c'] =
         'size' => '20',
     );
 
-//$dictionary['Opportunity']['fields']['engineer_c'] =
-//    array (
-//        'required' => false,
-//        'name' => 'deal_address_c',
-//        'vname' => 'LBL_DEAL_ADDRESS_C',
-//        'type' => 'varchar',
-//        'massupdate' => 0,
-//        'no_default' => false,
-//        'comments' => '',
-//        'help' => '',
-//        'importable' => 'true',
-//        'duplicate_merge' => 'disabled',
-//        'duplicate_merge_dom_value' => '0',
-//        'audited' => false,
-//        'inline_edit' => true,
-//        'reportable' => true,
-//        'unified_search' => false,
-//        'merge_filter' => 'disabled',
-//        'len' => '255',
-//        'size' => '20',
-//    );
+$dictionary['Opportunity']['fields']['deal_address_c'] =
+    array (
+        'required' => false,
+        'name' => 'deal_address_c',
+        'vname' => 'LBL_DEAL_ADDRESS_C',
+        'type' => 'varchar',
+        'massupdate' => 0,
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => '0',
+        'audited' => false,
+        'inline_edit' => true,
+        'reportable' => true,
+        'unified_search' => false,
+        'merge_filter' => 'disabled',
+        'len' => '255',
+        'size' => '20',
+    );
 
 
+$dictionary['Opportunity']['fields']['created_by_name_c'] =
+    array (
+        'required' => false,
+        'name' => 'created_by_name_c',
+        'vname' => 'LBL_CREATED_BY_NAME_C',
+        'type' => 'varchar',
+        'massupdate' => 0,
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => '0',
+        'audited' => false,
+        'inline_edit' => true,
+        'reportable' => true,
+        'unified_search' => false,
+        'merge_filter' => 'disabled',
+        'len' => '255',
+        'size' => '20',
+    );
 //(
 //[type] => varchar
 //[supports_unified_search] => 1
