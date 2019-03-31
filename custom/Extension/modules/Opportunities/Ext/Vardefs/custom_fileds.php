@@ -33,6 +33,29 @@
 ////required to create the field in the _cstm table
 //$dictionary['Opportunity']['fields']['engineer_c']['source'] = 'custom_fields';
 
+//
+//$dictionary['Opportunity']['fields']['engineer_c'] =
+//    array (
+//        'required' => false,
+//        'name' => 'engineer_c',
+//        'vname' => 'LBL_ENGINEER_C',
+//        'type' => 'varchar',
+//        'massupdate' => 0,
+//        'no_default' => false,
+//        'comments' => '',
+//        'help' => '',
+//        'importable' => 'true',
+//        'duplicate_merge' => 'disabled',
+//        'duplicate_merge_dom_value' => '0',
+//        'audited' => false,
+//        'inline_edit' => true,
+//        'reportable' => true,
+//        'unified_search' => false,
+//        'merge_filter' => 'disabled',
+//        'len' => '255',
+//        'size' => '20',
+//    ),
+
 //(
 //[type] => varchar
 //[supports_unified_search] => 1
@@ -51,7 +74,7 @@
 //    [ext1] =>
 //    [ext2] =>
 //    [ext3] =>
-//    [ext4] => 
+//    [ext4] =>
 //    [audited] => 0
 //    [inline_edit] => 1
 //    [massupdate] => 0
