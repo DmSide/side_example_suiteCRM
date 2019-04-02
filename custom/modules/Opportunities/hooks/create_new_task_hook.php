@@ -71,12 +71,21 @@ class create_new_task_hook
         $resultGetContactId = $dbGetContactId->query($queryGetContactId);
         $resultGetContactIdRow = $dbGetContactId->fetchByAssoc($resultGetContactId);
         $contact_id  = $resultGetContactIdRow['contact_id'];
-        //***************Get $deal_manager_c************************
+        //***************Get manager_id and deal_address_c************************
         $dbGetManager = DBManagerFactory::getInstance();
-        $queryGetManager = "SELECT deal_manager_c, deal_address_c FROM opportunities WHERE id = '{$bean->id}'";
+        $queryGetManager = "SELECT a.assigned_user_id as manager_id, o.deal_address_c as deal_address_c
+                            FROM opportunities o, accounts a, accounts_opportunities ao
+                            
+                            WHERE o.id = '{$bean->id}' and o.deleted = 0 
+                              and ao.opportunity_id = o.id  and ao.deleted = 0
+                              and a.id = ao.account_id and a.deleted = 0  
+                            "
+        ;
         $resultGetManager = $dbGetManager->query($queryGetManager);
         $resultGetManagerRow = $dbGetManager->fetchByAssoc($resultGetManager);
-        $deal_manager_c = $resultGetManagerRow['deal_manager_c'];
+        $manager_id = $resultGetManagerRow['manager_id'];
+        $GLOBALS['log']->debug("************AAAAAAAAAAAA*********");
+        $GLOBALS['log']->debug($manager_id);
         $deal_address_c = $resultGetManagerRow['deal_address_c'];
         //*****************Get $date_due*****************************
         $date_due = ($bean->sales_stage == "Price Quote" or $bean->sales_stage == "Счет")
@@ -87,7 +96,7 @@ class create_new_task_hook
             'techotdel' => $techotdel_id, //'c6c52b5c-cbed-5bbb-8d58-5c5bfb65720f',
             'office' => $office_id,//'72ddba62-cc55-edb2-3260-5c9fcf714535',
             'denis' => $denis_id, //'570cfb3e-fe1f-ed10-68f4-5c5bfaa04842',
-            'manager' => $deal_manager_c,
+            'manager' => $manager_id,
         );
         //*********Fill up field $assigned_user_id and $name*************************************************
         if ($bean->sales_stage == "Technical department" or $bean->sales_stage == "Техотдел") {

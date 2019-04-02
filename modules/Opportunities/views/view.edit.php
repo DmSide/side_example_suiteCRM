@@ -77,8 +77,12 @@ class OpportunitiesViewEdit extends ViewEdit
     public function display()
     {
         global $app_list_strings;
+        $GLOBALS['log']->debug('PAPAUTE');
+        $GLOBALS['log']->debug($app_list_strings);
         $json = getJSONobj();
         $prob_array = $json->encode($app_list_strings['sales_probability_dom']);
+        $prob_array_side = $json->encode($app_list_strings['sales_stage_dom_side']);
+        $GLOBALS['log']->debug($prob_array);
         $prePopProb = '';
         if (empty($this->bean->id) && empty($_REQUEST['probability'])) {
             $prePopProb = 'document.getElementsByName(\'sales_stage\')[0].onchange();';
@@ -87,7 +91,14 @@ class OpportunitiesViewEdit extends ViewEdit
         $probability_script=<<<EOQ
 	<script>
 	prob_array = $prob_array;
+	prob_array_side = $prob_array_side;
+	$(document).ready(  function() {
+	    stage = document.getElementsByName('sales_stage')[0].value;
+	    //alert(prob_array[stage]);
+	    //document.getElementsByName('sales_stage')[0] = prob_array_side[stage];
+	});
 	document.getElementsByName('sales_stage')[0].onchange = function() {
+	        //alert(document.getElementsByName('sales_stage')[0].value); //=this.options[this.selectedIndex].text;
 			if(typeof(document.getElementsByName('sales_stage')[0].value) != "undefined" && prob_array[document.getElementsByName('sales_stage')[0].value]
 			&& typeof(document.getElementsByName('probability')[0]) != "undefined"
 			) {

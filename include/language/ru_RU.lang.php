@@ -322,6 +322,36 @@ $app_list_strings = array(
         'Net 30' => 'Нетто 30',
     ),
     'sales_stage_default_key' => 'Prospecting',
+    'sales_stage_dom_side' => array(
+        'Technical department' => array(
+            'Office' => 'Офис',
+        ),
+        'Office' => array(
+            'Qualification' => 'Оценка',
+        ),
+        'Qualification' => array(
+            'Matching' => 'Согласование',
+        ),
+        'Matching' => array(
+            'Price Quote' => 'Счет',
+            'Closed Lost' => 'Закрыто с потерей',
+        ),
+        'Price Quote' => array(
+            'Order' => 'Заказ',
+        ),
+        'Order Quote' => array(
+            'Waiting' => 'Ожидание товара',
+        ),
+        'Waiting' => array(
+            'Sale' => 'Реализация',
+        ),
+        'Sale' => array(
+            'Closed Won' => 'Закрыто с успехом',
+        ),
+        'Closed' => array(
+            'Closed Won' => 'Закрыто с успехом',
+        ),
+    ),
     'sales_stage_dom' => array(
      //#SALES_STAGE_DOM_CHANGE_TAG
         //'Primary contact' => 'Первичный контакт',

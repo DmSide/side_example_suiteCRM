@@ -46,18 +46,15 @@ array (
           array (
             'name' => 'name',
           ),
-          1 => 'account_name',
+          1 => 'sales_stage',
         ),
         1 => 
         array (
-          0 => 
+          0 => 'account_name',
+          1 => 
           array (
             'name' => 'deal_address_c',
             'label' => 'LBL_DEAL_ADDRESS_C',
-          ),
-          1 => 
-          array (
-            'name' => 'amount',
           ),
         ),
         2 => 
@@ -70,33 +67,47 @@ array (
           ),
           1 => 
           array (
-            'name' => 'date_closed',
+            'name' => 'created_by_name_c',
+            'label' => 'LBL_CREATED_BY_NAME_C',
           ),
         ),
         3 => 
         array (
-          0 => 'sales_stage',
+          0 => 
+          array (
+            'name' => 'amount',
+          ),
           1 => 
           array (
-            'name' => 'deal_manager_c',
-            'label' => 'LBL_DEAL_MANAGER_C',
+            'name' => 'date_closed',
           ),
         ),
         4 => 
         array (
           0 => 
           array (
+            'name' => 'deal_manager_c',
+            'label' => 'LBL_DEAL_MANAGER_C',
+          ),
+        ),
+        5 => 
+        array (
+          0 => 
+          array (
             'name' => 'engineer_c',
             'label' => 'LBL_ENGINEER_C',
           ),
-          1 => 
+        ),
+        6 => 
+        array (
+          0 => 
           array (
             'name' => 'loaded_act_c',
             'studio' => 'visible',
             'label' => 'LBL_LOADED_ACT_C',
           ),
         ),
-        5 => 
+        7 => 
         array (
           0 => 
           array (
@@ -109,16 +120,15 @@ array (
             'label' => 'LBL_GOOD_DATE_C',
           ),
         ),
-        6 => 
+        8 => 
         array (
           0 => 
           array (
             'name' => 'good_date_comming_c',
             'label' => 'LBL_GOOD_DATE_COMMING_C',
           ),
-          1 => '',
         ),
-        7 => 
+        9 => 
         array (
           0 => 'description',
         ),
