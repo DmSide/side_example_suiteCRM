@@ -16,8 +16,8 @@ class update_account_fileds_hook
         $dbSelectAccountFileds = DBManagerFactory::getInstance();
         //deal_creator_c = '',  engineer_c = ''
         $queryAccountFileds = "SELECT a.billing_address_street as street, a.id as id 
-                                   FROM accounts a, accounts_opportunities ao
-                                   WHERE a.deleted = 0 and ao.account_id = a.id and ao.opportunity_id ='{$bean->id}' LIMIT 1";
+                               FROM accounts a, accounts_opportunities ao
+                               WHERE a.deleted = 0 and ao.account_id = a.id and ao.opportunity_id ='{$bean->id}' LIMIT 1";
         $resultAccount = $dbSelectAccountFileds->query($queryAccountFileds);
         $resultAccountRow = $dbSelectAccountFileds->fetchByAssoc($resultAccount);
         $result_account_id = $resultAccountRow['id'];
@@ -32,9 +32,9 @@ class update_account_fileds_hook
         {
             $dbSelectManager = DBManagerFactory::getInstance();
             $querySelectManager = "SELECT u.user_name as user_name
-                  FROM accounts a, users u
-                  WHERE a.deleted = 0 and u.deleted = 0 
-                        and u.id = a.assigned_user_id  and a.id = '{$result_account_id}'";
+                                   FROM accounts a, users u
+                                   WHERE a.deleted = 0 and u.deleted = 0 
+                                     and u.id = a.assigned_user_id  and a.id = '{$result_account_id}'";
             $resultManager = $dbSelectManager->query($querySelectManager);
             $resultManagerRow = $dbSelectManager->fetchByAssoc($resultManager);
             $result_manager_name = $resultManagerRow['user_name'];
@@ -45,9 +45,9 @@ class update_account_fileds_hook
         #FILL UP created_by_name_c
         $dbSelectCreatedUser = DBManagerFactory::getInstance();
         $querySelectCreatedUser = "SELECT u.user_name as user_name
-                                    FROM users u
-                                    WHERE u.deleted = 0 
-                                      and u.id = '{$bean->created_by}'";
+                                   FROM users u
+                                   WHERE u.deleted = 0 
+                                     and u.id = '{$bean->created_by}'";
         $resultSelectCreatedUser = $dbSelectCreatedUser->query($querySelectCreatedUser);
         $resultSelectCreatedUserRow = $dbSelectCreatedUser->fetchByAssoc($resultSelectCreatedUser);
         $result_created_by_name = $resultSelectCreatedUserRow['user_name'];
@@ -57,11 +57,11 @@ class update_account_fileds_hook
 
         $dbUpdateOpportunities = DBManagerFactory::getInstance();
         $queryUpdateOpportunities = "UPDATE opportunities
-                                    SET created_by_name_c = '{$result_created_by_name}', 
+                                     SET created_by_name_c = '{$result_created_by_name}', 
                                         deal_manager_c = '{$result_manager_name}',
                                         deal_address_c = '{$result_street}',
                                         description = ''
-                                    WHERE id ='{$bean->id}'";
+                                     WHERE id ='{$bean->id}'";
         $dbUpdateOpportunities->query($queryUpdateOpportunities);
 
         $GLOBALS['log']->debug('Stop update_account_fileds_hook');
