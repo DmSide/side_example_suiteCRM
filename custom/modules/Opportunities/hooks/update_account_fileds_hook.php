@@ -59,7 +59,8 @@ class update_account_fileds_hook
         $queryUpdateOpportunities = "UPDATE opportunities
                                     SET created_by_name_c = '{$result_created_by_name}', 
                                         deal_manager_c = '{$result_manager_name}',
-                                        deal_address_c = '{$result_street}'
+                                        deal_address_c = '{$result_street}',
+                                        description = ''
                                     WHERE id ='{$bean->id}'";
         $dbUpdateOpportunities->query($queryUpdateOpportunities);
 
