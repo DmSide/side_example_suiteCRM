@@ -31,6 +31,7 @@ class create_new_task_hook
         $techotdel_id = '';
         $denis_id = '';
         $office_id ='';
+        $default_manager_id = 'ce946445-2eca-6010-d0ec-5c5ae43f67da';
 
         $dbGetUsers = DBManagerFactory::getInstance();
         $queryGetUsers = "SELECT * FROM users WHERE deleted = 0";
@@ -84,6 +85,9 @@ class create_new_task_hook
         $resultGetManager = $dbGetManager->query($queryGetManager);
         $resultGetManagerRow = $dbGetManager->fetchByAssoc($resultGetManager);
         $manager_id = $resultGetManagerRow['manager_id'];
+        if (empty($manager_id) or !isset($manager_id)) {
+            $manager_id=$default_manager_id;
+        }
         $GLOBALS['log']->debug("************AAAAAAAAAAAA*********");
         $GLOBALS['log']->debug($manager_id);
         $deal_address_c = $resultGetManagerRow['deal_address_c'];
