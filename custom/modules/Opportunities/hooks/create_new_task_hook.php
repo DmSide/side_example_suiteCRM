@@ -102,6 +102,8 @@ class create_new_task_hook
             'denis' => $denis_id, //'570cfb3e-fe1f-ed10-68f4-5c5bfaa04842',
             'manager' => $manager_id,
         );
+        $name = '';
+        $assigned_user_id = '';
         //*********Fill up field $assigned_user_id and $name*************************************************
         if ($bean->sales_stage == "Technical department" or $bean->sales_stage == "Техотдел") {
             $assigned_user_id = $assigned_user_list['techotdel'];
@@ -138,17 +140,38 @@ class create_new_task_hook
         $description = ($bean->sales_stage == "Technical department" or $bean->sales_stage == "Техотдел")
             ? 'Работа: '.$bean->name.'\nАдрес: '.$deal_address_c.'\nОписание: '.$bean->description
             : $bean->description;
+//        $dbInsertNewTask = DBManagerFactory::getInstance();
+//        $queryInsertNewTask = "INSERT INTO tasks (
+//                                    id, name, created_by, assigned_user_id, status, deleted, description,
+//                                    parent_type, parent_id, priority, contact_id,
+//                                    date_start, date_entered, date_due_flag, date_due
+//                                ) VALUES (
+//                                    '{$uuid}', '{$name}', '{$bean->created_by}', '{$assigned_user_id}','Not Started', 0,'{$description}',
+//                                    'Opportunities', '{$bean->id}', 'Medium', '{$contact_id}',
+//                                    '{$now}' ,'{$now}',0,'{$date_due}'
+//                                )";
+//        $dbInsertNewTask->query($queryInsertNewTask);
+
         $dbInsertNewTask = DBManagerFactory::getInstance();
-        $queryInsertNewTask = "INSERT INTO tasks (
-                                    id, name, created_by, assigned_user_id, status, deleted, description, 
-                                    parent_type, parent_id, priority, contact_id,
-                                    date_start, date_entered, date_due_flag, date_due
-                                ) VALUES (
-                                    '{$uuid}', '{$name}', '{$bean->created_by}', '{$assigned_user_id}','Not Started', 0,'{$description}',
-                                    'Opportunities', '{$bean->id}', 'Medium', '{$contact_id}',
-                                    '{$now}' ,'{$now}',0,'{$date_due}'
-                                )";
-        $dbInsertNewTask->query($queryInsertNewTask);
+        $task = new Task();
+        $task->id = $uuid;
+        $task->name = $name;
+        $task->created_by = $bean->created_by;
+        $task->assigned_user_id = $assigned_user_id;
+        $task->status = 'Not Started';
+        $task->deleted = 0;
+        $task->description = $description;
+        $task->parent_type = 'Opportunities';
+        $task->parent_id = $bean->id;
+        $task->priority = 'Medium';
+        $task->contact_id = $contact_id;
+        $task->date_start = $now;
+        $task->date_entered = $now;
+        $task->date_due_flag = 0;
+        $task->date_due = $date_due;
+        $task->save();
+        $dbInsertNewTask->insert($task);
+
         $GLOBALS['log']->debug('Finish create_new_task_hook');
     }
 }
