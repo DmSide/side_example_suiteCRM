@@ -515,10 +515,6 @@ class CaseUpdatesHook
         if (!isAOPEnabled()) {
             return true;
         }
-        $GLOBALS['log']->debug('SIDESIDE SendCreationEmail start');
-        $GLOBALS['log']->debug($bean);
-        $GLOBALS['log']->debug('Contact');
-        $GLOBALS['log']->debug($contact);
         require_once 'include/SugarPHPMailer.php';
         $mailer = new SugarPHPMailer();
         $admin = new Administration();
