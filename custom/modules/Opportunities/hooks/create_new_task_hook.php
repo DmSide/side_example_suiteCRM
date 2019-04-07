@@ -173,44 +173,51 @@ class create_new_task_hook
         $dbInsertNewTask->insert($task);
 
         $GLOBALS['log']->debug('Start create_email');
-        require_once('modules/Emails/Email.php');
-        #global $mod_strings;
-        #global $app_list_strings;
-        #global $app_strings;
-        global $current_user;
+        // include Email class
+        include_once('include/SugarPHPMailer.php');
+        include_once('include/utils/db_utils.php'); // for from_html function
 
-        $json = getJSONobj();
-        $pass = '';
-        if (!empty($_REQUEST['mail_smtppass'])) {
-            $pass = $_REQUEST['mail_smtppass'];
-        } elseif (isset($_REQUEST['mail_type'])) {
-            $oe = new OutboundEmail();
-            if (is_admin($current_user) && $_REQUEST['mail_type'] == 'system') {
-                $oe = $oe->getSystemMailerSettings();
-            } else {
-                $oe = $oe->getMailerByName($current_user, $_REQUEST['mail_type']);
-            }
-            if (!empty($oe)) {
-                $pass = $oe->mail_smtppass;
-            }
+        $mail = new SugarPHPMailer();
+// Add details
+        $mail->From = "crm@obermeister.ru";
+        $mail->FromName = "auto inform";
+// Clear recipients
+        $mail->ClearAllRecipients();
+        $mail->ClearReplyTos();
+// Add recipient
+        $mail->AddAddress('dsidenko@mail.ru', 'proger');
+// Add subject
+        $mail->Subject = "Welcome";
+// Add mail content
+        $mail->Body_html = from_html("Test1");
+        $mail->Body = wordwrap("Test2",900);
+        $mail->isHTML(true); // set to true if content has html tags
+
+// This portion will get all the attachments from related notes
+//        include_once('module/Notes/Note.php');
+//        $note = new Note();
+//        $where = "notes.parent_id = '<ID_OF_THE_RECORD>'";
+//// Get full list gets all attachments of all notes related to the record
+//        $attachments = $note->get_full_list("", $where, true);
+//        $all_attachments = array();
+//        $all_attachments = array_merge($all_attachments, $attachments);
+//// Loop through record
+//        foreach($all_attachments as $attachment) {
+//            $file_name = $attachment->filename;
+//            $location = "upload/{$attachment->id}";
+//            $mime_type = $attachment->file_mime_type;
+//            // Add attachment to email
+//            $mail->AddAttachment($location, $file_name, 'base64', $mime_type);
+//        }
+
+        // Prepare for sending
+        $mail->prepForOutbound();
+        $mail->setMailerForSystem();
+
+        //Send mail, log if there is error
+        if (!$mail->Send()) {
+            $GLOBALS['log']->fatal("ERROR: Mail sending failed!");
         }
-        $email = new Email();
-        $out = $email->sendEmailTest(
-            $_REQUEST['mail_smtpserver'],
-            $_REQUEST['mail_smtpport'],
-            $_REQUEST['mail_smtpssl'],
-            ($_REQUEST['mail_smtpauth_req'] == 'true' ? 1 : 0),
-            $_REQUEST['mail_smtpuser'],
-            $pass,
-            $_REQUEST['outboundtest_from_address'],
-            $_REQUEST['outboundtest_to_address'],
-            $_REQUEST['mail_sendtype'],
-            $_REQUEST['mail_from_name']
-        );
-
-        $out = $json->encode($out);
-        #echo $out;
-        $GLOBALS['log']->debug($out);
 
 
 
