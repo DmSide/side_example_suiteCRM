@@ -75,13 +75,11 @@ class create_new_task_hook
         //***************Get manager_id and deal_address_c************************
         $dbGetManager = DBManagerFactory::getInstance();
         $queryGetManager = "SELECT a.assigned_user_id as manager_id, o.deal_address_c as deal_address_c
-                            FROM opportunities o, accounts a, accounts_opportunities ao
-                            
+                            FROM opportunities o, accounts a, accounts_opportunities ao                          
                             WHERE o.id = '{$bean->id}' and o.deleted = 0 
                               and ao.opportunity_id = o.id  and ao.deleted = 0
                               and a.id = ao.account_id and a.deleted = 0  
-                            "
-        ;
+                            ";
         $resultGetManager = $dbGetManager->query($queryGetManager);
         $resultGetManagerRow = $dbGetManager->fetchByAssoc($resultGetManager);
         $manager_id = $resultGetManagerRow['manager_id'];
@@ -136,6 +134,17 @@ class create_new_task_hook
             $assigned_user_id = $assigned_user_list['office'];
             $name = 'Счет на диагностику';
         }
+        //**************************************GET EMAIL ADDRESS***********************************************
+        $dbGetEmail = DBManagerFactory::getInstance();
+        $queryGetEmail = "select ea.email_address as email_address, u.last_name as last_name, u.first_name as first_name  
+                          from email_addresses ea, email_addr_bean_rel ear, users u
+                          WHERE ear.bean_module = 'Users' and ear.deleted = 0 AND ear.bean_id = u.id 
+                          and ea.id = ear.email_address_id and u.id = '{$assigned_user_id}'";
+        $resultGetEmail = $dbGetEmail->query($queryGetEmail);
+        $resultGetEmailRow = $dbGetEmail->fetchByAssoc($resultGetEmail);
+        $email_address = $resultGetEmailRow['email_address'];
+        $last_name = $resultGetEmailRow['last_name'];
+        $first_name = $resultGetEmailRow['first_name'];
         //*****************************************************************************************************
         $description = ($bean->sales_stage == "Technical department" or $bean->sales_stage == "Техотдел")
             ? 'Работа: '.$bean->name.'\nАдрес: '.$deal_address_c.'\nОписание: '.$bean->description
@@ -178,39 +187,15 @@ class create_new_task_hook
         include_once('include/utils/db_utils.php'); // for from_html function
 
         $mail = new SugarPHPMailer();
-// Add details
         $mail->From = "crm@obermeister.ru";
-        $mail->FromName = "auto inform";
-// Clear recipients
+        $mail->FromName = "авто информирование";
         $mail->ClearAllRecipients();
         $mail->ClearReplyTos();
-// Add recipient
-        $mail->AddAddress('dsidenko@mail.ru', 'proger');
-// Add subject
-        $mail->Subject = "Welcome";
-// Add mail content
-        $mail->Body_html = from_html("Test1");
-        $mail->Body = wordwrap("Test2",900);
-        $mail->isHTML(true); // set to true if content has html tags
-
-// This portion will get all the attachments from related notes
-//        include_once('module/Notes/Note.php');
-//        $note = new Note();
-//        $where = "notes.parent_id = '<ID_OF_THE_RECORD>'";
-//// Get full list gets all attachments of all notes related to the record
-//        $attachments = $note->get_full_list("", $where, true);
-//        $all_attachments = array();
-//        $all_attachments = array_merge($all_attachments, $attachments);
-//// Loop through record
-//        foreach($all_attachments as $attachment) {
-//            $file_name = $attachment->filename;
-//            $location = "upload/{$attachment->id}";
-//            $mime_type = $attachment->file_mime_type;
-//            // Add attachment to email
-//            $mail->AddAttachment($location, $file_name, 'base64', $mime_type);
-//        }
-
-        // Prepare for sending
+        $mail->AddAddress($email_address, $last_name.",".$first_name);
+        $mail->Subject = "SuiteCRM - Задача: ".$name;
+        $mail->Body_html = from_html("<b>{$bean->created_by}</b> назначил задачу на <b>{$last_name},{$first_name}</b>\nMessage");
+        //$mail->Body = wordwrap("Test2",900);
+        //№$mail->isHTML(true); // set to true if content has html tags
         $mail->prepForOutbound();
         $mail->setMailerForSystem();
 
