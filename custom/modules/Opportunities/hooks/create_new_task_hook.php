@@ -192,15 +192,15 @@ class create_new_task_hook
         $mail->ClearReplyTos();
         $mail->AddAddress($email_address, $last_name.",".$first_name);
         $mail->Subject = "SuiteCRM - Задача: ".$name;
-        $mail->Body_html = from_html("<p><b>{$bean->created_by_name_c}</b> назначил задачу на <b>{$last_name},{$first_name}</b>.</p>
-<p>
-        Тема: {TASK_SUBJECT}<br />
-Приоритет: {TASK_PRIORITY}<br />
-Дата выполнения: {TASK_DUEDATE}<br />
-Статус: {TASK_STATUS}<br />
-Описание: {TASK_DESCRIPTION}
-</p>");
-        $mail->Body = wordwrap("<{$bean->created_by_name_c}> назначил задачу на <{$last_name},{$first_name}>
+//        $mail->Body_html = from_html("<p><b>{$bean->created_by_name_c}</b> назначил задачу на <b>{$last_name},{$first_name}</b>.</p>
+//<p>
+//        Тема: {TASK_SUBJECT}<br />
+//Приоритет: {TASK_PRIORITY}<br />
+//Дата выполнения: {TASK_DUEDATE}<br />
+//Статус: {TASK_STATUS}<br />
+//Описание: {TASK_DESCRIPTION}
+//</p>");
+        $mail->Body = wordwrap("<b>{$bean->created_by_name_c}</b> назначил задачу на <{$last_name},{$first_name}>
                                     \nТема: $task->name
                                     \nПриоритет: $task->priority
                                     \nДата выполнения: $task->date_due
