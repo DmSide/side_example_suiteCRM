@@ -200,7 +200,7 @@ class create_new_task_hook
 //Статус: {TASK_STATUS}<br />
 //Описание: {TASK_DESCRIPTION}
 //</p>");
-        $mail->Body = wordwrap("<b>{$bean->created_by_name_c}</b> назначил задачу на <{$last_name},{$first_name}>
+        $mail->Body = wordwrap("<{$bean->created_by_name_c}> назначил задачу на <{$last_name},{$first_name}>
                                     \nТема: $task->name
                                     \nПриоритет: $task->priority
                                     \nДата выполнения: $task->date_due
