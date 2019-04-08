@@ -193,8 +193,8 @@ class create_new_task_hook
         $mail->ClearReplyTos();
         $mail->AddAddress($email_address, $last_name.",".$first_name);
         $mail->Subject = "SuiteCRM - Задача: ".$name;
-        $mail->Body_html = from_html("<b>{$bean->created_by}</b> назначил задачу на <b>{$last_name},{$first_name}</b>\nMessage");
-        //$mail->Body = wordwrap("Test2",900);
+        //$mail->Body_html = from_html("<b>{$bean->created_by}</b> назначил задачу на <b>{$last_name},{$first_name}</b>\nMessage");
+        $mail->Body = wordwrap("<b>{$bean->created_by}</b> назначил задачу на <b>{$last_name},{$first_name}</b>\nMessage",900);
         //№$mail->isHTML(true); // set to true if content has html tags
         $mail->prepForOutbound();
         $mail->setMailerForSystem();
