@@ -181,6 +181,24 @@ class create_new_task_hook
         $dbInsertNewTask->insert($task);
 
         $GLOBALS['log']->debug('Start create_email');
+        $dbGetUserName = DBManagerFactory::getInstance();
+        $queryGetUserName = "SELECT u.last_name as last_name, u.first_name as first_name 
+                             FROM users u
+                             WHERE u.deleted = 0 and u.id = '{$bean->created_by}'";
+        $resultGetUserName = $dbGetUserName->query($queryGetUserName);
+        $resultGetUserNameRow = $dbGetUserName->fetchByAssoc($resultGetUserName);
+        $created_by_last_name  = $resultGetUserNameRow['last_name'];
+        $created_by_first_name  = $resultGetUserNameRow['first_name'];
+        #------------------------------------
+        $GLOBALS['log']->debug('Start create_email');
+        $dbGeAccountName = DBManagerFactory::getInstance();
+        $queryGeAccountName =  "SELECT a.name as account_name 
+                              from accounts_opportunities ao, accounts a 
+                              where a.id = ao.account_id and opportunity_id ='{$bean->id}'";
+        $resultGeAccountName = $dbGeAccountName->query($queryGeAccountName);
+        $resultGeAccountNameRow = $dbGeAccountName->fetchByAssoc($resultGeAccountName);
+        $account_name  = $resultGeAccountNameRow['account_name'];
+
         // include Email class
         include_once('include/SugarPHPMailer.php');
         include_once('include/utils/db_utils.php'); // for from_html function
@@ -200,11 +218,12 @@ class create_new_task_hook
 //Статус: {TASK_STATUS}<br />
 //Описание: {TASK_DESCRIPTION}
 //</p>");
-        $mail->Body = wordwrap("<{$bean->created_by_name_c}> назначил задачу на <{$last_name},{$first_name}>
-                                    \nТема: $task->name
-                                    \nПриоритет: $task->priority
+
+
+        $mail->Body = wordwrap("<{$created_by_last_name},{$created_by_first_name}> назначил задачу на <{$last_name},{$first_name}>
+                                    \nТема: $task->name                                   
+                                    \nКонтрагент: $account_name
                                     \nДата выполнения: $task->date_due
-                                    \nСтатус: $task->status
                                     \nОписание: $task->description",900);
         //№$mail->isHTML(true); // set to true if content has html tags
         $mail->prepForOutbound();
