@@ -45,7 +45,7 @@ array (
   ),
   'AMOUNT_USDOLLAR' => 
   array (
-    'width' => '10%',
+    'width' => '15%',
     'label' => 'LBL_LIST_AMOUNT_USDOLLAR',
     'align' => 'right',
     'default' => true,
@@ -85,6 +85,14 @@ array (
   array (
     'width' => '10%',
     'label' => 'LBL_CREATED',
+    'default' => true,
+  ),
+  'DESCRIPTION' => 
+  array (
+    'type' => 'text',
+    'label' => 'LBL_DESCRIPTION',
+    'sortable' => false,
+    'width' => '10%',
     'default' => true,
   ),
   'OPPORTUNITY_TYPE' => 
