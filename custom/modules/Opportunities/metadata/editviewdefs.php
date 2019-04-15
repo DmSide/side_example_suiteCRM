@@ -132,6 +132,14 @@ array (
         array (
           0 => 'description',
         ),
+        10 => 
+        array (
+          0 => 
+          array (
+            'name' => 'history_description_c',
+            'label' => 'LBL_HISTORY_DESCRIPTION_C',
+          ),
+        ),
       ),
       'LBL_PANEL_ASSIGNMENT' => 
       array (

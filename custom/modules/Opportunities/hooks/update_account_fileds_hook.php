@@ -55,11 +55,24 @@ class update_account_fileds_hook
             $result_created_by_name = 'Нет данных';
         }
 
+        global $current_user, $app_list_strings;
+        #echo $current_user->user_name;
+        #$GLOBALS['log']->debug($current_user->user_name);
+
+        $description_for_history = '';
+        if ($bean->description != ''){
+            $description_for_history = " с описанием:\n".$bean->description;
+        }
+        $history = $bean->history_description_c."\n".$current_user->last_name." ".$current_user->first_name.
+            " перевел задачу на этап ".$app_list_strings['sales_stage_dom'][$bean->sales_stage].$description_for_history;
+        $GLOBALS['log']->debug($history);
+
         $dbUpdateOpportunities = DBManagerFactory::getInstance();
         $queryUpdateOpportunities = "UPDATE opportunities
                                      SET created_by_name_c = '{$result_created_by_name}', 
                                         deal_manager_c = '{$result_manager_name}',
                                         deal_address_c = '{$result_street}',
+                                        history_description_c = '{$history}',
                                         description = ''
                                      WHERE id ='{$bean->id}'";
         $dbUpdateOpportunities->query($queryUpdateOpportunities);

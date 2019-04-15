@@ -19,6 +19,7 @@ $mod_strings = array_merge($mod_strings,
        'LBL_CREATED_BY_NAME_C' => 'Кем создано',
        'LBL_DEAL_MANAGER_C' => 'Ответственный менеджер',
        'LBL_LOADED_ACT_C' => 'Акт мастера',
+       'LBL_HISTORY_DESCRIPTION_C' => 'История'
    )
 );
 

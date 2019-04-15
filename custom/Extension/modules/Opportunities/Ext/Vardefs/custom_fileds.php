@@ -220,3 +220,27 @@ $dictionary['Opportunity']['fields']['document_id_c'] =
         'len' => 36,
         'size' => '20',
     );
+
+$dictionary['Opportunity']['fields']['history_description_c'] =
+    array (
+        'required' => false,
+        'name' => 'history_description_c',
+        'vname' => 'LBL_HISTORY_DESCRIPTION_C',
+        'type' => 'text',
+        'massupdate' => 0,
+        'no_default' => false,
+        'comments' => '',
+        'help' => '',
+        'importable' => 'true',
+        'duplicate_merge' => 'disabled',
+        'duplicate_merge_dom_value' => '0',
+        'audited' => false,
+        'inline_edit' => true,
+        'reportable' => true,
+        'unified_search' => false,
+        'merge_filter' => 'disabled',
+        'size' => '20',
+        'studio' => 'visible',
+        'rows' => '10',
+        'cols' => '20',
+    );
