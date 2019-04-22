@@ -79,6 +79,14 @@ array (
     'label' => 'LBL_DATE_ENTERED',
     'default' => true,
   ),
+  'DESCRIPTION' => 
+  array (
+    'type' => 'text',
+    'label' => 'LBL_DESCRIPTION',
+    'sortable' => false,
+    'width' => '10%',
+    'default' => true,
+  ),
   'DATE_START' => 
   array (
     'width' => '5%',
@@ -91,14 +99,6 @@ array (
     'width' => '10%',
     'label' => 'LBL_LIST_STATUS',
     'link' => false,
-    'default' => false,
-  ),
-  'DESCRIPTION' => 
-  array (
-    'type' => 'text',
-    'label' => 'LBL_DESCRIPTION',
-    'sortable' => false,
-    'width' => '10%',
     'default' => false,
   ),
 );

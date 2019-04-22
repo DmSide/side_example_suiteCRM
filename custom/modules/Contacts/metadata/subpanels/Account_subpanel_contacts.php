@@ -1,5 +1,5 @@
 <?php
-// created: 2019-04-03 14:15:42
+// created: 2019-04-16 14:26:46
 $subpanel_layout['list_fields'] = array (
   'name' => 
   array (
@@ -14,6 +14,13 @@ $subpanel_layout['list_fields'] = array (
   array (
     'type' => 'varchar',
     'vname' => 'LBL_TITLE',
+    'width' => '10%',
+    'default' => true,
+  ),
+  'primary_address_street' => 
+  array (
+    'type' => 'varchar',
+    'vname' => 'LBL_PRIMARY_ADDRESS_STREET',
     'width' => '10%',
     'default' => true,
   ),

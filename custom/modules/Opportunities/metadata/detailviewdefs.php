@@ -67,41 +67,12 @@ array (
         array (
           0 => 
           array (
-            'name' => 'date_entered',
-            'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}',
-          ),
-          1 => 
-          array (
-            'name' => 'created_by_name_c',
-            'label' => 'LBL_CREATED_BY_NAME_C',
-          ),
-        ),
-        3 => 
-        array (
-          0 => 
-          array (
-            'name' => 'amount',
-            'label' => '{$MOD.LBL_AMOUNT} ({$CURRENCY})',
-          ),
-          1 => 'date_closed',
-        ),
-        4 => 
-        array (
-          0 => 
-          array (
-            'name' => 'deal_manager_c',
-            'label' => 'LBL_DEAL_MANAGER_C',
-          ),
-        ),
-        5 => 
-        array (
-          0 => 
-          array (
             'name' => 'engineer_c',
             'label' => 'LBL_ENGINEER_C',
           ),
+          1 => 'date_closed',
         ),
-        6 => 
+        3 => 
         array (
           0 => 
           array (
@@ -109,13 +80,14 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_LOADED_ACT_C',
           ),
+          1 => '',
         ),
-        7 => 
+        4 => 
         array (
           0 => 
           array (
-            'name' => 'good_cost_c',
-            'label' => 'LBL_GOOD_COST_C',
+            'name' => 'amount',
+            'label' => '{$MOD.LBL_AMOUNT} ({$CURRENCY})',
           ),
           1 => 
           array (
@@ -123,15 +95,16 @@ array (
             'label' => 'LBL_GOOD_DATE_C',
           ),
         ),
-        8 => 
+        5 => 
         array (
-          0 => 
+          0 => '',
+          1 => 
           array (
             'name' => 'good_date_comming_c',
             'label' => 'LBL_GOOD_DATE_COMMING_C',
           ),
         ),
-        9 => 
+        6 => 
         array (
           0 => 
           array (
@@ -139,7 +112,7 @@ array (
             'nl2br' => true,
           ),
         ),
-        10 => 
+        7 => 
         array (
           0 => 
           array (
@@ -156,6 +129,33 @@ array (
           array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO',
+          ),
+          1 => '',
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'deal_manager_c',
+            'label' => 'LBL_DEAL_MANAGER_C',
+          ),
+          1 => 
+          array (
+            'name' => 'created_by_name_c',
+            'label' => 'LBL_CREATED_BY_NAME_C',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'date_entered',
+            'customCode' => '{$fields.date_entered.value} {$APP.LBL_BY} {$fields.created_by_name.value}',
+          ),
+          1 => 
+          array (
+            'name' => 'good_cost_c',
+            'label' => 'LBL_GOOD_COST_C',
           ),
         ),
       ),
