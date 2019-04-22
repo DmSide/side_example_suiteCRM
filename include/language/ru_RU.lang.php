@@ -150,17 +150,22 @@ $app_list_strings = array(
 
     //e.g. en francais 'Analyst'=>'Analyste',
     'account_type_dom' => array(
+//        '' => '',
+//        'Analyst' => 'Аналитик',
+//        'Competitor' => 'Конкурент',
+//        'Customer' => 'Клиент',
+//        'Integrator' => 'Интегратор',
+//        'Investor' => 'Инвестор',
+//        'Partner' => 'Партнёр',
+//        'Press' => 'Пресса',
+//        'Prospect' => 'Потенциальный клиент',
+//        'Reseller' => 'Реселлер',
+//        'Other' => 'Другое',
+
         '' => '',
-        'Analyst' => 'Аналитик',
-        'Competitor' => 'Конкурент',
         'Customer' => 'Клиент',
-        'Integrator' => 'Интегратор',
-        'Investor' => 'Инвестор',
-        'Partner' => 'Партнёр',
-        'Press' => 'Пресса',
-        'Prospect' => 'Потенциальный клиент',
-        'Reseller' => 'Реселлер',
         'Other' => 'Другое',
+        'Trush' => 'Хлам'
     ),
     //e.g. en espanol 'Apparel'=>'Ropa',
     'industry_dom' => array(
