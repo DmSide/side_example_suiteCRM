@@ -1,5 +1,5 @@
 <?php
-// created: 2019-04-19 09:34:15
+// created: 2019-05-14 08:42:59
 $mod_strings = array (
   'LBL_DATE_ENTERED' => 'Дата создания:',
   'LBL_ENGINEER_USER_ID' => '&#039;engineer&#039; (связано с ID модуля &#039;Пользователь&#039;)',
@@ -12,4 +12,6 @@ $mod_strings = array (
   'LBL_AMOUNT_USDOLLAR' => 'Сумма:',
   'LBL_DATE_CLOSED' => 'Ожидаемая дата закрытия:',
   'LBL_HISTORY_DESCRIPTION_C' => 'История',
+  'LBL_PAY' => 'Счет на оплату №     от ',
+  'LBL_DESCRIPTION' => 'Описание:',
 );

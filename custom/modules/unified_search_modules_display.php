@@ -1,6 +1,26 @@
 <?php
-// created: 2019-03-21 20:03:10
+// created: 2019-05-07 10:07:25
 $unified_search_modules_display = array (
+  'Accounts' => 
+  array (
+    'visible' => true,
+  ),
+  'Contacts' => 
+  array (
+    'visible' => true,
+  ),
+  'Documents' => 
+  array (
+    'visible' => true,
+  ),
+  'Notes' => 
+  array (
+    'visible' => true,
+  ),
+  'Opportunities' => 
+  array (
+    'visible' => true,
+  ),
   'AOBH_BusinessHours' => 
   array (
     'visible' => false,
@@ -65,17 +85,13 @@ $unified_search_modules_display = array (
   array (
     'visible' => false,
   ),
-  'Accounts' => 
-  array (
-    'visible' => true,
-  ),
   'Bugs' => 
   array (
     'visible' => false,
   ),
   'Calls' => 
   array (
-    'visible' => true,
+    'visible' => false,
   ),
   'Calls_Reschedule' => 
   array (
@@ -87,15 +103,7 @@ $unified_search_modules_display = array (
   ),
   'Cases' => 
   array (
-    'visible' => true,
-  ),
-  'Contacts' => 
-  array (
-    'visible' => true,
-  ),
-  'Documents' => 
-  array (
-    'visible' => true,
+    'visible' => false,
   ),
   'FP_Event_Locations' => 
   array (
@@ -107,19 +115,11 @@ $unified_search_modules_display = array (
   ),
   'Leads' => 
   array (
-    'visible' => true,
+    'visible' => false,
   ),
   'Meetings' => 
   array (
-    'visible' => true,
-  ),
-  'Notes' => 
-  array (
-    'visible' => true,
-  ),
-  'Opportunities' => 
-  array (
-    'visible' => true,
+    'visible' => false,
   ),
   'OutboundEmailAccounts' => 
   array (
